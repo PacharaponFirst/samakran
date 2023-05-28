@@ -1,6 +1,11 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 const LoginPage:FC = () => {
+    //script
+    const {email, setEmail} = useState('');
+    const {password, setPassword} = useState('');
+
+    //template
     return (
         <>
     <div className = "flex w-screen h-screen bg-red-400">
@@ -8,9 +13,21 @@ const LoginPage:FC = () => {
             <img className='w-64 h-64 m-auto mt-3 mb-3 rounded-md' src="moo.jpg" />
             <h1 className='m-auto text-3xl' >Login</h1>
             <label htmlFor='email'>Email</label>
-            <input id="email" type ="text"  className="npru-input" />
+            <input 
+            id="email" 
+            type ="text"  
+            className="npru-input" 
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            />
             <label htmlFor="password">Password</label>
-            <input id="password" type ="password" className="npru-input" />
+            <input 
+            id="password" 
+            type ="password" 
+            className="npru-input"
+            onChange={(p) => setPassword(p.target.value)}
+            value={password}
+             />
             <button className= "mt-4 npru-button">Login</button>
         </div>
     </div>
