@@ -1,10 +1,12 @@
 import { FC, useState } from 'react';
 import { string, z } from 'zod';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm: FC = () => {
     // script
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     // validation schema
     const userModel = z.object({
@@ -12,16 +14,17 @@ const LoginForm: FC = () => {
         password: string().min(8),
     });
 
-    const onLoginClick = () => {};
+    const onLoginClick = () => {
     
         const model = userModel.safeParse({ email, password});
         if (model.success) {
             //TODO: send data to api server
+            navigate("/home");
         } else {
             //show error dialog
         }
     
-    
+    };
     
     //template
 
