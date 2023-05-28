@@ -1,11 +1,11 @@
 import { FC } from "react";
+import { LoginPage } from "./page/LoginPage";
 
+// component template
 const App: FC = () => {
   return (
     <> 
-   <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+   <LoginPage/>
   </>
   );
 };
