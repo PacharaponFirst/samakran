@@ -25,7 +25,7 @@ const LoginPage:FC = () => {
                 console.log(model.data); 
                 // TODO: send model.data to api server
             }else{
-                console.log(model.error);
+                console.log(model.error.issues);
                 // TODO: show error dialog
             }
     };
