@@ -12,10 +12,15 @@ const LoginPage:FC = () => {
         password: string().min(8),
     });
 
+    //login button event
     const onLoginClick = () => {
-        console.log(email, password);
-    }
-
+        try {
+            loginModel.parse({email, password});
+            console.log(loginModel)
+        }catch(e) {
+            console.log(e);
+        }
+    };
     //template
     return (
         <>
