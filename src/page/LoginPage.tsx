@@ -2,8 +2,8 @@ import { FC, useState } from 'react';
 
 const LoginPage:FC = () => {
     //script
-    const {email, setEmail} = useState('');
-    const {password, setPassword} = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     //template
     return (
@@ -25,10 +25,13 @@ const LoginPage:FC = () => {
             id="password" 
             type ="password" 
             className="npru-input"
-            onChange={(p) => setPassword(p.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             value={password}
              />
             <button className= "mt-4 npru-button">Login</button>
+            <h1>
+                {email} , {password}
+            </h1>
         </div>
     </div>
     </>
