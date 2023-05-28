@@ -8,8 +8,8 @@ const LoginPage:FC = () => {
     
     //validation schema
     const loginModel = z.object({
-        email: string().email(),
-        password: string().min(8),
+        email: string().email({message:"กรุณากรอกข้อมูลให้อยู่ในรู)แบบอีเมล์"}),
+        password: string().min(8, {message:"รหัสผ่านต้องมีความยาวมากกว่า 8 ตัวอักษร"}),
     });
 
     //login button event
