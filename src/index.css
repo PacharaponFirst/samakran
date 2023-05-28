@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .npru-input {
+        @apply border border-blue-200 hover:border-blue-600;
+    }
+    .npru-button {
+        @apply rounded-lg bg-blue-400 hover:bg-blue-800  text-white;
+    }
+}
