@@ -1,11 +1,17 @@
 import { FC } from "react";
 import { LoginPage } from "./page/LoginPage";
+import { LoginForm } from "./component/LoginForm";
 
 // component template
 const App: FC = () => {
   return (
     <> 
-   <LoginPage/>
+   <LoginPage>
+
+      <LoginForm />
+    
+    
+      </LoginPage>
   </>
   );
 };
