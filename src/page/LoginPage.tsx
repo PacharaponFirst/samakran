@@ -23,9 +23,10 @@ const LoginPage:FC = () => {
         const model = loginModel.safeParse({email, password});
             if(model.success) {
                 console.log(model.data); 
-                // send model.data to api server
+                // TODO: send model.data to api server
             }else{
-                console.log(model);
+                console.log(model.error);
+                // TODO: show error dialog
             }
     };
     //template
