@@ -3,7 +3,7 @@ import { FC } from 'react';
 const HomePage:FC = () => {
     return <>
     <h1>
-        HomePage Work !!!
+        Homepage Work!!!
     </h1>
     </>
 }
