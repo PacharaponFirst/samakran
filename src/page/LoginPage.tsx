@@ -1,9 +1,16 @@
 import { FC, useState } from 'react';
+import { string, z } from 'zod';
 
 const LoginPage:FC = () => {
     //script
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    
+    //validation schema
+    const loginModel = z.object({
+        email: string().email(),
+        password: string().min(8),
+    });
 
     const onLoginClick = () => {
         console.log(email, password);
