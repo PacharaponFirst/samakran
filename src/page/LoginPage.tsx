@@ -5,6 +5,10 @@ const LoginPage:FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const onLoginClick = () => {
+        console.log(email, password);
+    }
+
     //template
     return (
         <>
@@ -28,7 +32,7 @@ const LoginPage:FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
              />
-            <button className= "mt-4 npru-button">Login</button>
+            <button className= "mt-4 npru-button" onClick = {() => onLoginClick()}>Login</button>
             <h1>
                 {email} , {password}
             </h1>
