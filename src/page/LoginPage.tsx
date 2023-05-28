@@ -14,12 +14,19 @@ const LoginPage:FC = () => {
 
     //login button event
     const onLoginClick = () => {
-        try {
+        /*try {
             loginModel.parse({email, password});
             console.log(loginModel)
         }catch(e) {
             console.log(e);
-        }
+        }*/
+        const model = loginModel.safeParse({email, password});
+            if(model.success) {
+                console.log(model.data); 
+                // send model.data to api server
+            }else{
+                console.log(model);
+            }
     };
     //template
     return (
