@@ -4,6 +4,7 @@ import {App} from './App.tsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { HomePage } from './page/HomePage.tsx'
+import { Layout } from './component/Layout.tsx'
 
 const router = createBrowserRouter([
   {
@@ -11,8 +12,14 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/home",
-    element: <HomePage />,
+    path: "/admin",
+    element: <Layout />,
+    children: [
+      {
+      path: "home",
+      element: <HomePage />
+      },
+    ],
   },
 ]);
 
