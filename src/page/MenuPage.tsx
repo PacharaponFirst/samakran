@@ -7,7 +7,7 @@ const MenuPage: FC = () => {
         <div className='grid grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3'>
         
             <button className='npru-button'><Link to = "/admin/news">News</Link></button>
-            <button className='npru-button'>Menu #2</button>
+            <Link to = "/admin/user"className='npru-button text-center'>User</Link>
             <button className='npru-button'>Menu #3</button>
             <button className='npru-button'>Menu #4</button>
             <button className='npru-button'>Menu #5</button>

@@ -7,6 +7,7 @@ import { HomePage } from './page/HomePage.tsx'
 import { Layout } from './component/Layout.tsx'
 import { MenuPage } from './page/MenuPage.tsx'
 import { NewsPage } from './page/NewsPage.tsx'
+import { UserPage } from './page/UserPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path: "news",
         element: <NewsPage />,
       },
+      {
+        path: "user",
+        element: <UserPage />,
+      }
     ],
   },
   

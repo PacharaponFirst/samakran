@@ -42,9 +42,13 @@ const NewsPage: FC = () => {
 
     // async await function
     const loadNewsAsync = async() => {
+        try {
         const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
         const json = await resp.json();
         setPosts(json);
+    } catch (e){
+        //show error
+    }
     };
 
 
