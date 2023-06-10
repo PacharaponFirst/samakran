@@ -7,6 +7,6 @@
         @apply border border-blue-200 hover:border-blue-600 rounded-md py-1.5 text-sm;
     }
     .npru-button {
-        @apply rounded-lg bg-blue-400 hover:bg-blue-800  text-white ;
+        @apply rounded-lg bg-blue-400 hover:bg-blue-800  text-white py-1.5 text-sm ;
     }
 }

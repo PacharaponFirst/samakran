@@ -6,9 +6,9 @@ const Header: FC = () => {
     <>
         <div className='flex flex-row gap-4 p-4'>
              <h1>LOGO</h1>
-            <Link to = "/admin/home" className="npru-button">
+            <Link to = "/admin/home" className="npru-button p-2">
                 Home</Link>
-            <Link to = "/admin/menu" className="npru-button">
+            <Link to = "/admin/menu" className="npru-button p-2">
                 Menu</Link>
         </div>
         </>
