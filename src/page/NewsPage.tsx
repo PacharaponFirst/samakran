@@ -13,10 +13,10 @@ interface NewsProps {
 
 const NewsComponent: FC<NewsProps> = ( { data } ) => {
     return( 
-        <>
+        <div className='grid grid-cols-1 border rounded-md shadow-md sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4'>
         <div>{data.title}</div>
         <div>{data.body}</div>
-        </>
+        </div>
     );
 };
 
