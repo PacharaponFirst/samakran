@@ -40,12 +40,24 @@ const NewsPage: FC = () => {
         })
     };
 
+    // async await function
+    const loadNewsAsync = async() => {
+        const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const json = await resp.json();
+        setPosts(json);
+    };
+
+
+
     //template
     return (
     <>
         <h1>NEWS TODAY!!!</h1>
         <button className='npru-button' onClick={loadNews}>
             Load News
+        </button>
+        <button className='npru-button' onClick={loadNewsAsync}>
+            Load News (Async)
         </button>
         <div className=" grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4 xl:gap-8">
         { posts.map((value) => (
