@@ -13,9 +13,9 @@ interface NewsProps {
 
 const NewsComponent: FC<NewsProps> = ( { data } ) => {
     return( 
-        <div className='grid grid-cols-1 border rounded-md shadow-md sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4'>
-        <div>{data.title}</div>
-        <div>{data.body}</div>
+        <div key={data.id} className='grid grid-cols-1 border rounded-md shadow-md p-4 '>
+        <div className='text-3xl'>{data.title}</div>
+        <div className='text-sm py-4'>{data.body}</div>
         </div>
     );
 };
@@ -30,7 +30,7 @@ const NewsPage: FC = () => {
             }]);
        
 
-    // function
+    // async function (Promise)
     const loadNews = () => {
 
         fetch("https://jsonplaceholder.typicode.com/posts")
@@ -47,9 +47,11 @@ const NewsPage: FC = () => {
         <button className='npru-button' onClick={loadNews}>
             Load News
         </button>
+        <div className=" grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4 xl:gap-8">
         { posts.map((value) => (
             <NewsComponent data ={value} />
         ))}
+        </div>
             </>
     );
 };
