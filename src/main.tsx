@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { HomePage } from './page/HomePage.tsx'
 import { Layout } from './component/Layout.tsx'
 import { MenuPage } from './page/MenuPage.tsx'
+import { NewsPage } from './page/NewsPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -24,8 +25,13 @@ const router = createBrowserRouter([
         path: "menu",
         element: <MenuPage />
       },
+      {
+        path: "news",
+        element: <NewsPage />,
+      },
     ],
   },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

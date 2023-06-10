@@ -10,6 +10,7 @@ const Header: FC = () => {
                 Home</Link>
             <Link to = "/admin/menu" className="npru-button p-2">
                 Menu</Link>
+        
         </div>
         </>
     );
