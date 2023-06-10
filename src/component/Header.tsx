@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 const Header: FC = () => {
     return(
     <>
-        <div className='flex flex-row gap-4 p-4'>
-             <h1>LOGO</h1>
-            <Link to = "/admin/home" className="npru-button p-2">
+    <nav className="bg-teal-500 p-1">
+        <div className='flex flex-row gap-4 p-1 ' >
+        <img className='w-20 h-16 ' src = "/src/assets/mookrob.jpg"></img>
+            <Link to = "/admin/home" className="npru-button  h-10 ">
                 Home</Link>
-            <Link to = "/admin/menu" className="npru-button p-2">
+            <Link to = "/admin/menu" className="npru-button  h-10">
                 Menu</Link>
         
         </div>
+        </nav>
         </>
     );
 };
