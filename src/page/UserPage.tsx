@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 interface Geo {
     lat: string;
@@ -32,6 +32,10 @@ interface User {
 }
 
 const UserPage: FC = () => {
+    //state
+    const [users, setUsers] = useState<User[]>();
+    
+    //template
     return(
     <>
     <h1>User Sawatdeekub</h1>
