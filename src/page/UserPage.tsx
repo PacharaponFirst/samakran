@@ -30,15 +30,47 @@ interface User {
     website: string;
     company: Company;
 }
+const UserRow: FC = () => {
+    return<>
+    <tr>
+                <td>001</td>
+                <td>Jame</td>
+                <td>a@g.com</td>
+                <td>153/2</td>
+                <td>024-981-255</td>
+                <td>1.com</td>
+                <td>123/456</td>
+                <td>xxxx</td>
+                <td>BKK</td>
+                <td>123456</td>
+                <td>80, 100</td>
+                <td>Google</td>
+                <td>GH</td>
+                <td>189000</td>
+            </tr>
+    </>
+}
 
 const UserPage: FC = () => {
     //state
     const [users, setUsers] = useState<User[]>();
     
+    //api
+    const usersApi = async() => {
+        try{
+            const resp = await fetch("https://jsonplaceholder.typicode.com/users");
+            const json = await resp.json()
+            setUsers(json)
+        } catch (e){
+            //show error
+        }
+    }
+
     //template
     return(
     <>
     <h1>User Sawatdeekub</h1>
+    <button className='npru-button' onClick={usersApi}></button>
     <table>
         <thead>
             <tr>
@@ -63,22 +95,9 @@ const UserPage: FC = () => {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>001</td>
-                <td>Jame</td>
-                <td>a@g.com</td>
-                <td>153/2</td>
-                <td>024-981-255</td>
-                <td>1.com</td>
-                <td>123/456</td>
-                <td>xxxx</td>
-                <td>BKK</td>
-                <td>123456</td>
-                <td>80, 100</td>
-                <td>Google</td>
-                <td>GH</td>
-                <td>189000</td>
-            </tr>
+            {users?.map ( (user) => (
+                <UserRow />
+            ))}
         </tbody>
     </table>
     </>
