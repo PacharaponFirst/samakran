@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 
 interface Post {
     userId: number;
@@ -28,6 +28,9 @@ const NewsPage: FC = () => {
             title: "test",
             body: "test",
             }]);
+            useEffect(() => {
+                loadNews();
+            }, [])
        
 
     // async function (Promise)
