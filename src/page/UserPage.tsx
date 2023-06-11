@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 
 interface Geo {
     lat: string;
@@ -61,7 +61,11 @@ const UserRow: FC<RowProps> = ({ data }) => {
 const UserPage: FC = () => {
     //state
     const [users, setUsers] = useState<User[]>();
-    
+    useEffect(() => {
+        // fetch data here
+        usersApi();
+    }, []);
+
     //api
     const usersApi = async() => {
         try{
