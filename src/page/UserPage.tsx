@@ -30,23 +30,30 @@ interface User {
     website: string;
     company: Company;
 }
-const UserRow: FC = () => {
+
+interface RowProps{
+    data: User;
+}
+
+const UserRow: FC<RowProps> = ({ data }) => {
     return<>
     <tr>
-                <td>001</td>
-                <td>Jame</td>
-                <td>a@g.com</td>
-                <td>153/2</td>
-                <td>024-981-255</td>
-                <td>1.com</td>
-                <td>123/456</td>
-                <td>xxxx</td>
-                <td>BKK</td>
-                <td>123456</td>
-                <td>80, 100</td>
-                <td>Google</td>
-                <td>GH</td>
-                <td>189000</td>
+                <td>{data.id}</td>
+                <td>{data.name}</td>
+                <td>{data.username}</td>
+                <td>{data.email}</td>
+                <td>{data.address.street}</td>
+                <td>{data.address.suite}</td>
+                <td>{data.address.city}</td>
+                <td>{data.address.zipcode}</td>
+                <td>
+                    {data.address.geo.lat} {data.address.geo.lng}
+                </td>
+                <td>{data.phone}</td>
+                <td>{data.website}</td>
+                <td>{data.company.name}</td>
+                <td>{data.company.catchPhrase}</td>
+                <td>{data.company.bs}</td>
             </tr>
     </>
 }
@@ -96,7 +103,7 @@ const UserPage: FC = () => {
         </thead>
         <tbody>
             {users?.map ( (user) => (
-                <UserRow />
+                <UserRow data={user}/>
             ))}
         </tbody>
     </table>
